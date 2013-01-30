@@ -11,11 +11,11 @@
 
 #ifndef GREEN_SIGNAL_H_
 #define GREEN_SIGNAL_H_
-#include "green_signal_h/gs_generic_signal_p.h"
-#include "green_signal_h/gs_generic_signal_ifs.h"
-#include "green_signal_h/gs_generic_signal_phase.h"
-#include "green_signal_h/green_signal_socket/initiator/initiator_signal_socket.h"
-#include "green_signal_h/green_signal_socket/target/target_signal_socket.h"
-#include "green_signal_h/green_signal_socket/initiator/initiator_signal_multi_socket.h"
-#include "green_signal_h/green_signal_socket/target/target_signal_multi_socket.h"
+#include "greensignalsocket/green_signal_h/gs_generic_signal_p.h"
+#include "greensignalsocket/green_signal_h/gs_generic_signal_ifs.h"
+#include "greensignalsocket/green_signal_h/gs_generic_signal_phase.h"
+#include "greensignalsocket/green_signal_h/green_signal_socket/initiator/initiator_signal_socket.h"
+#include "greensignalsocket/green_signal_h/green_signal_socket/target/target_signal_socket.h"
+#include "greensignalsocket/green_signal_h/green_signal_socket/initiator/initiator_signal_multi_socket.h"
+#include "greensignalsocket/green_signal_h/green_signal_socket/target/target_signal_multi_socket.h"
 #endif /*GREEN_SIGNAL_H_*/
