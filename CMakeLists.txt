@@ -147,6 +147,27 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/Makefile.defs
         DESTINATION examples/greenrouter
 )
 
+# signalsocket
+
+install(DIRECTORY signalsocket/green-signal-socket/include/
+        DESTINATION include
+        PATTERN ".svn" EXCLUDE
+)
+
+install(DIRECTORY signalsocket/green-signal-socket/example/
+        DESTINATION examples/signalsocket/green-signal-socket
+        PATTERN ".svn" EXCLUDE
+)
+
+install(DIRECTORY signalsocket/green-signal-socket/docs/    # TODO: doc or docs?
+        DESTINATION docs/signalsocket/green-signal-socket
+        PATTERN ".svn" EXCLUDE
+)
+
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/Makefile.defs
+        DESTINATION examples/greenrouter
+)
+
 
 # build a CPack driven installer package
 include (InstallRequiredSystemLibraries)
