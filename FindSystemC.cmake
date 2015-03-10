@@ -59,6 +59,8 @@ SET(_SYSTEMC_PATHS
   /usr/local/lib-linux
   /usr/local/lib-linux64
   /usr/local/lib-macos
+  /usr/local/systemc/latest/include
+  /usr/local/systemc/latest/lib-linux64
   )
 FIND_FILE(_SYSTEMC_VERSION_FILE
   NAMES sc_ver.h
@@ -67,11 +69,11 @@ FIND_FILE(_SYSTEMC_VERSION_FILE
   PATH_SUFFIXES sysc/kernel
 )
 
-EXEC_PROGRAM("cat ${_SYSTEMC_VERSION_FILE} |grep '#define SC_API_VERSION_STRING' | cut -d '_' -f 7 "
+EXEC_PROGRAM("cat ${_SYSTEMC_VERSION_FILE} |grep '#define SC_VERSION_MAJOR' | awk '{print $3}'"
              OUTPUT_VARIABLE SystemC_MAJOR)
-EXEC_PROGRAM("cat ${_SYSTEMC_VERSION_FILE} |grep '#define SC_API_VERSION_STRING' | cut -d '_' -f 8 "
+EXEC_PROGRAM("cat ${_SYSTEMC_VERSION_FILE} |grep '#define SC_VERSION_MINOR' | awk '{print $3}'"
              OUTPUT_VARIABLE SystemC_MINOR)
-EXEC_PROGRAM("cat ${_SYSTEMC_VERSION_FILE} |grep '#define SC_API_VERSION_STRING' | cut -d '_' -f 9 "
+EXEC_PROGRAM("cat ${_SYSTEMC_VERSION_FILE} |grep '#define SC_VERSION_PATCH' | awk '{print $3}'"
              OUTPUT_VARIABLE SystemC_REV)
 
 set(SystemC_VERSION ${SystemC_MAJOR}.${SystemC_MINOR}.${SystemC_REV})
